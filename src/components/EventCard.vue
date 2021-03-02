@@ -7,19 +7,14 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import { Event } from '../store/Event';
+import { Event } from '@/store/Event';
 
 @Options({
-  // props: {
-  //   msg: String
-  // }
+  props: {
+    event: Event
+  }
 })
 export default class EventCard extends Vue {
-  data() {
-    return {
-      event: new Event()
-    }
-  }
 }
 </script>
 
