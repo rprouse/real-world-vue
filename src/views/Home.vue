@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="events">
+    <h1>Events for Good</h1>
     <EventCard v-for="event in events" :event="event" :key="event.id"/>
   </div>
 </template>
@@ -56,3 +57,11 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
