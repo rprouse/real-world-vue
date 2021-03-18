@@ -15,7 +15,7 @@ import { Event } from '@/store/Event';
     EventCard,
   },
 })
-export default class Home extends Vue {
+export default class EventList extends Vue {
   data() {
     return {
       events: [
