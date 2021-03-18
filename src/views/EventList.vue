@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import axios from 'axios';
+import EventService from '@/services/EventService';
 import EventCard from '@/components/EventCard.vue'; // @ is an alias to /src
 import { Event } from '@/store/Event';
 
@@ -19,7 +19,8 @@ import { Event } from '@/store/Event';
 export default class EventList extends Vue {
   private events: Array<Event> = [];
   created() {
-    axios.get<Array<Event>>('https://my-json-server.typicode.com/rprouse/real-world-vue/events')
+    const service = new EventService();
+    service.getEvents()
       .then(response => {
         this.events = response.data;
       })
