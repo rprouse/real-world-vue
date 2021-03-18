@@ -24,7 +24,7 @@ export default class EventList extends Vue {
       const response = await service.getEvents();
       this.events = response.data;
     } catch(error) {
-        console.error(error);
+      console.error(error);
     }
   }
 }
