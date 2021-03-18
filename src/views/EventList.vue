@@ -21,7 +21,8 @@ export default class EventList extends Vue {
   async created() {
     const service = new EventService();
     try {
-      this.events = (await service.getEvents()).data;
+      const response = await service.getEvents();
+      this.events = response.data;
     } catch(error) {
         console.error(error);
     }
