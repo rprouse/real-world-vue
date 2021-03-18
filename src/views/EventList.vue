@@ -18,15 +18,13 @@ import { Event } from '@/store/Event';
 })
 export default class EventList extends Vue {
   private events: Array<Event> = [];
-  created() {
+  async created() {
     const service = new EventService();
-    service.getEvents()
-      .then(response => {
-        this.events = response.data;
-      })
-      .catch(reason => {
-        console.error(reason);
-      });
+    try {
+      this.events = (await service.getEvents()).data;
+    } catch(error) {
+        console.error(error);
+    }
   }
 }
 </script>
